@@ -18,7 +18,7 @@ async def test_usecases_get_should_return_success(product_inserted):
     result = await product_usecase.get(id=product_inserted.id)
 
     assert isinstance(result, ProductOut)
-    assert result.name == "Iphone 14 Pro Max"
+    assert result.name == "Iphone 14 pro Max"
 
 
 async def test_usecases_get_should_not_found():
