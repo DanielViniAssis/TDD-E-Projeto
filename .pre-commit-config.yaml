@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 default_language_version:
@@ -30,3 +31,36 @@ repos:
     rev: 23.3.0
     hooks:
     -   id: black
+=======
+default_language_version:
+  python: python3.12
+repost:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0
+  hooks:
+  - id: check-added-large-files
+  - id: check-toml
+  - id: check-yaml
+    args:
+      - --unsafe
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+- repo: https://github.com/asottitle/pyupgrade
+  rev: v3.7.0
+  hooks: 
+  - id: pyupgrade
+    args:
+    - --py3-plus
+    - --keep-runtime-typing
+- repo: https://github.com/charliemarsh/ruff-pre-commit
+  rev: v0.0.275
+  hooks:
+  - id: ruff
+    args:
+    - --fix
+  repo: https://github.com/psf/black
+  rev: 23.3.0
+  hooks:
+  -   id: black
+  
+>>>>>>> f44af51a971f61c5e771acb97d8ff8fdabaf3363
