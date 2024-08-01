@@ -11,9 +11,11 @@ class CreateBaseModel(BaseModel):
     created_at: datetime = Field(default_factory=datetime.utcnow)
     updated_at: datetime = Field(default_factory=datetime.utcnow)
 
+
     @model_serializer
     def set_model(self) -> dict[str, Any]:
         self_dict = dict(self)
+
 
         for key, value in self_dict.items():
             if isinstance(value, Decimal):

@@ -7,7 +7,6 @@ from store.models.product import ProductModel
 from store.schemas.product import ProductIn, ProductOut, ProductUpdate, ProductUpdateOut
 from store.core.exceptions import NotFoundException
 
-
 class ProductUsecase:
     def __init__(self) -> None:
         self.client: AsyncIOMotorClient = db_client.get()
@@ -48,6 +47,5 @@ class ProductUsecase:
         result = await self.collection.delete_one({"id": id})
 
         return True if result.deleted_count > 0 else False
-
 
 product_usecase = ProductUsecase()
