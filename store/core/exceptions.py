@@ -7,3 +7,8 @@ class BaseException(Exception):
 
 class NotFoundException(BaseException):
     message = "Not Found"
+    
+class DatabaseInsertError(Exception):
+    def __init__(self, message: str):
+        self.message = message
+        super().__init__(self.message)
